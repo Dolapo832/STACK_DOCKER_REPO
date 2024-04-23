@@ -6,22 +6,22 @@ pipeline {
         PATH = "${PATH}:${getSonarPath()}"
     }
 
-//    stages {
-//         stage ('Sonarcube Scan') {
-//         steps {
-//          script {
-//           scannerHome = tool 'sonarqube'
-//         }
-//         withCredentials([string(credentialsId: 'SONAR_TOKEN', variable: 'SONAR_TOKEN')]){
-//         withSonarQubeEnv('SonarQubeScanner') {
-//           sh " ${scannerHome}/bin/sonar-scanner \
-//           -Dsonar.projectKey=CliXX-App   \
-//           -Dsonar.login=${SONAR_TOKEN} "
-//         }
-//         }
-//         }
+   stages {
+        stage ('Sonarcube Scan') {
+        steps {
+         script {
+          scannerHome = tool 'sonarqube'
+        }
+        withCredentials([string(credentialsId: 'SONAR_TOKEN', variable: 'SONAR_TOKEN')]){
+        withSonarQubeEnv('SonarQubeScanner') {
+          sh " ${scannerHome}/bin/sonar-scanner \
+          -Dsonar.projectKey=CliXX-App   \
+          -Dsonar.login=${SONAR_TOKEN} "
+        }
+        }
+        }
 
-// }
+}
 
 //  stage('Quality Gate') {
 //             steps {
