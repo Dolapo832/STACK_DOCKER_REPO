@@ -33,6 +33,7 @@ pipeline {
 
 //    }
 // }
+
  stage ('Build Docker Image') {
             steps {
                 // script{
@@ -57,6 +58,8 @@ stage ('Starting Docker Image') {
               '''
           }
         }
+   }
+}  
 
 def getSonarPath(){
         def SonarHome=tool name: 'sonarqube', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
