@@ -4,8 +4,8 @@
     connection: local
     become: False
     vars:
-      instance_id: wordpressdbclixxjenkins
-      db_snapshot: wordpressdbclixxjenkins-snapshot
+      instance_id: clixxprepre
+      db_snapshot: wordpressclixxdbclixxjenkins
       security_group: sg-0aa253b7f85effacb
     tasks:
        - name: Restore DB from snapshot
