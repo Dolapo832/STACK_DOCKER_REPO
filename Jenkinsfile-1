@@ -122,8 +122,8 @@ stage ('Restore CliXX Database') {
           }
           }
         }
-   }
-} 
+   
+
 
 
 def getSonarPath(){
