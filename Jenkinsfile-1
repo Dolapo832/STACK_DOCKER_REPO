@@ -28,11 +28,11 @@ pipeline {
         //     }
         // }
 
-        // stage ('Build Docker Image') {
-        //     steps {
-        //         sh "docker build . -t clixx-image:$VERSION"
-        //     }
-        // }
+        stage ('Build Docker Image') {
+            steps {
+                sh "docker build . -t clixx-image:$VERSION"
+            }
+        }
 
         stage ('Starting Docker Image') {
             steps {
